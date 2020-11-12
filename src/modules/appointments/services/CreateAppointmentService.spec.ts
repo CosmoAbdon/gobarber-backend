@@ -1,4 +1,5 @@
 import AppError from '@shared/errors/AppError';
+
 import FakeAppointmentsRepository from '@modules/appointments/repositories/fakes/FakeAppointmentsRepository';
 import CreateAppointmentService from '@modules/appointments/services/CreateAppointmentService';
 
@@ -31,7 +32,7 @@ describe('CreateAppointment', () => {
       provider_id: '123123',
     });
 
-    expect(
+    await expect(
       createAppointment.execute({
         date: appointmentDate,
         provider_id: '123123',
